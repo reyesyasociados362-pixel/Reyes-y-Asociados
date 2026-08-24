@@ -1,0 +1,749 @@
+/* ==========================================
+   PALETA EXTRAÍDA DEL LOGOTIPO
+   ========================================== */
+:root {
+  --verde-laurel: #0f382c;
+  --verde-oscuro: #071f18;
+  --dorado-escudo: #c89d35;
+  --dorado-hover: #e0b348;
+  --fondo-claro: #f8f9fa;
+  --texto-oscuro: #1a1a1a;
+  --texto-suave: #4a5568;
+  
+  /* Definición de la tipografía redonda */
+  --fuente-redonda: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--fuente-redonda); /* Aplica la tipografía circular a todo el sitio */
+}
+
+body {
+  color: var(--texto-oscuro);
+  background-color: #ffffff;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   ENCABEZADO Y NAVEGACIÓN
+   ========================================== */
+header {
+  background-color: var(--verde-laurel);
+  padding: 0.8rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 3px solid var(--dorado-escudo);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Ajuste para que el logo resalte sin deformarse */
+.logo-img {
+  height: 55px;
+  width: auto;
+  object-fit: contain;
+  /* Si el fondo del PNG no es transparente, el fondo verde lo enmarca limpio */
+  background: white;
+  padding: 2px;
+  border-radius: 4px;
+}
+
+.logo-texto {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.8rem;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--dorado-escudo);
+}
+
+/* Control Menú Hamburguesa Nativo */
+#check-menu {
+  display: none;
+}
+
+.btn-menu {
+  display: none;
+  font-size: 1.8rem;
+  color: var(--dorado-escudo);
+  cursor: pointer;
+}
+
+/* ==========================================
+   HERO SECTION (INICIO)
+   ========================================== */
+.hero {
+  background: linear-gradient(rgba(15, 56, 44, 0.92), rgba(7, 31, 24, 0.95)), 
+              url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80') center/cover;
+  color: #ffffff;
+  padding: 6rem 5% 5rem 5%;
+  text-align: center;
+}
+
+.badge {
+  background-color: var(--dorado-escudo);
+  color: var(--verde-oscuro);
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin: 1.2rem 0;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  max-width: 750px;
+  margin: 0 auto 2rem auto;
+  color: #e2e8f0;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+/* Botones */
+.btn {
+  padding: 0.85rem 1.8rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  display: inline-block;
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background-color: var(--dorado-escudo);
+  color: var(--verde-oscuro);
+}
+
+.btn-primary:hover {
+  background-color: var(--dorado-hover);
+  transform: translateY(-2px);
+}
+
+.btn-whatsapp {
+  background-color: #25D366;
+  color: #ffffff;
+}
+
+.btn-whatsapp:hover {
+  background-color: #20ba5a;
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   SECCIONES Y TARJETAS
+   ========================================== */
+.seccion {
+  padding: 4.5rem 5%;
+  text-align: center;
+}
+
+.seccion h2 {
+  font-size: 2rem;
+  color: var(--verde-laurel);
+  margin-bottom: 0.5rem;
+}
+
+.subtitulo {
+  color: var(--texto-suave);
+  margin-bottom: 2.5rem;
+  font-size: 1rem;
+}
+
+.bg-gris {
+  background-color: var(--fondo-claro);
+}
+
+.grid-servicios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tarjeta-servicio {
+  background: #ffffff;
+  padding: 1.8rem;
+  border-radius: 8px;
+  border-top: 4px solid var(--dorado-escudo);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-servicio:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.tarjeta-servicio h3 {
+  color: var(--verde-laurel);
+  margin-bottom: 0.6rem;
+  font-size: 1.2rem;
+}
+
+.tarjeta-servicio p {
+  color: var(--texto-suave);
+  font-size: 0.95rem;
+}
+
+/* ==========================================
+   SECCIÓN NOSOTROS (GRID DE 2 COLUMNAS)
+   ========================================== */
+.seccion-nosotros {
+  background-color: var(--fondo-claro);
+  padding: 5rem 5%;
+}
+
+.contenedor-nosotros-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 3rem;
+  border-radius: 12px;
+  border-top: 5px solid var(--dorado-escudo);
+  box-shadow: 0 5px 25px rgba(0,0,0,0.07);
+  display: grid;
+  grid-template-columns: 1fr 1.6fr; /* 1 parte para el logo, 1.6 para el texto */
+  gap: 3rem;
+  align-items: center;
+}
+
+/* Columna del Logo */
+.nosotros-logo-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.logo-gran-formato {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.1)); /* Sombra suave para darle volumen */
+}
+
+/* Columna del Texto */
+.nosotros-texto-col {
+  text-align: left;
+}
+
+.badge-sub {
+  color: var(--dorado-escudo);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.nosotros-header h2 {
+  font-size: 2.2rem;
+  color: var(--verde-laurel);
+  margin-top: 0.2rem;
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+
+.linea-dorada {
+  width: 60px;
+  height: 4px;
+  background-color: var(--dorado-escudo);
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+}
+
+.nosotros-contenido p {
+  color: var(--texto-suave);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.nosotros-contenido p.destacado {
+  color: var(--texto-oscuro);
+  font-size: 1.1rem;
+}
+
+.nosotros-contenido strong {
+  color: var(--verde-laurel);
+  font-weight: 700;
+}
+
+.frase-prioridad {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.frase-prioridad p {
+  color: var(--verde-laurel);
+  font-weight: 700;
+  font-size: 1.15rem;
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+/* Adaptación a dispositivos móviles */
+@media (max-width: 900px) {
+  .contenedor-nosotros-grid {
+    grid-template-columns: 1fr; /* Cambia a 1 sola columna en pantallas pequeñas */
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .logo-gran-formato {
+    max-width: 220px; /* Reduce un poco el logo en celulares */
+  }
+
+  .nosotros-header h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* ==========================================
+   FORMULARIO
+   ========================================== */
+.formulario-contacto {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  text-align: left;
+  border: 1px solid #e2e8f0;
+}
+
+.grupo-campo {
+  margin-bottom: 1.3rem;
+}
+
+.grupo-campo label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  color: var(--verde-laurel);
+}
+
+.grupo-campo input, 
+.grupo-campo select, 
+.grupo-campo textarea {
+  width: 100%;
+  padding: 0.85rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.grupo-campo input:focus, 
+.grupo-campo select:focus, 
+.grupo-campo textarea:focus {
+  border-color: var(--dorado-escudo);
+}
+
+footer {
+  background-color: var(--verde-oscuro);
+  color: #ffffff;
+  text-align: center;
+  padding: 2rem 5%;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(200, 157, 53, 0.3);
+}
+
+/* ==========================================
+   RESPONSIVE (CELULARES)
+   ========================================== */
+@media (max-width: 768px) {
+  .btn-menu {
+    display: block;
+  }
+
+  nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--verde-laurel);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease-in-out;
+    border-bottom: 2px solid var(--dorado-escudo);
+  }
+
+  nav ul {
+    flex-direction: column;
+    padding: 1rem 0;
+    gap: 0;
+    text-align: center;
+  }
+
+  nav a {
+    display: block;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  #check-menu:checked ~ nav {
+    max-height: 300px;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+}
+/* Marca de agua decorativa en la sección de Nosotros */
+.contenedor-nosotros-grid {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Símbolo decorativo de fondo */
+.contenedor-nosotros-grid::after {
+  content: "⚖";
+  position: absolute;
+  right: -20px;
+  bottom: -40px;
+  font-size: 15rem;
+  color: rgba(200, 157, 53, 0.05); /* Dorado ultraligero */
+  pointer-events: none;
+}
+
+/* Tarjetas de especialidades con personalidad */
+.tarjeta-servicio {
+  position: relative;
+  background: #ffffff;
+  border-top: none;
+  border-left: 4px solid var(--dorado-escudo);
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.tarjeta-servicio:hover {
+  transform: translateY(-7px);
+  border-left-color: var(--verde-laurel);
+  box-shadow: 0 12px 25px rgba(15, 56, 44, 0.12);
+}
+
+/* Número o Ícono distintivo en cada servicio */
+.tarjeta-servicio::before {
+  content: "✦";
+  color: var(--dorado-escudo);
+  font-size: 1.2rem;
+  display: block; 
+  margin-bottom: 0.5rem;
+}
+
+.top-bar {
+  background-color: var(--verde-oscuro);
+  color: #d1d5db;
+  font-size: 0.82rem;
+  padding: 6px 5%;
+  border-bottom: 1px solid rgba(200, 157, 53, 0.2);
+}
+
+.top-bar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.top-phone {
+  color: var(--dorado-escudo);
+  text-decoration: none;
+  font-weight: bold;
+}
+.pilares-despacho {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.pilar {
+  background: var(--fondo-claro);
+  padding: 0.8rem;
+  border-radius: 6px;
+  border-bottom: 2px solid var(--dorado-escudo);
+}
+
+.pilar strong {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--verde-laurel);
+}
+
+.pilar span {
+  font-size: 0.78rem;
+  color: var(--texto-suave);
+}
+/* ==========================================
+   WIDGET FLOTANTE DE ASESORÍA GRATUITA
+   ========================================== */
+.widget-asesoria-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+/* Botón Flotante Fijo */
+.btn-flotante-asesoria {
+  background-color: var(--verde-laurel);
+  color: #ffffff;
+  border: 2px solid var(--dorado-escudo);
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-family: var(--fuente-redonda);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+.btn-flotante-asesoria:hover {
+  background-color: var(--verde-oscuro);
+  border-color: var(--dorado-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.icono-chat {
+  font-size: 1.2rem;
+}
+
+/* Modal Emergente */
+.chat-modal {
+  display: none; /* Oculto por defecto */
+  position: absolute;
+  bottom: 65px;
+  right: 0;
+  width: 320px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(200, 157, 53, 0.3);
+  overflow: hidden;
+  animation: popup 0.3s ease forwards;
+}
+
+.chat-modal.activo {
+  display: block;
+}
+
+@keyframes popup {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.chat-header {
+  background-color: var(--verde-laurel);
+  color: #ffffff;
+  padding: 12px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--dorado-escudo);
+}
+
+.chat-header-info strong {
+  display: block;
+  font-size: 0.95rem;
+}
+
+.chat-header-info span {
+  font-size: 0.75rem;
+  color: var(--dorado-escudo);
+}
+
+.chat-close {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.chat-body {
+  padding: 15px;
+}
+
+.chat-intro {
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.grupo-campo-mini {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.grupo-campo-mini label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--verde-laurel);
+  margin-bottom: 3px;
+}
+
+.grupo-campo-mini input,
+.grupo-campo-mini textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-family: var(--fuente-redonda);
+}
+
+.btn-enviar-modal {
+  width: 100%;
+  background-color: var(--dorado-escudo);
+  color: var(--verde-oscuro);
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-top: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-enviar-modal:hover {
+  background-color: var(--dorado-hover);
+}
+
+/* Ajuste para celulares */
+@media (max-width: 480px) {
+  .widget-asesoria-container {
+    bottom: 15px;
+    right: 15px;
+    left: 15px;
+  }
+
+  .btn-flotante-asesoria {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .chat-modal {
+    width: 100%;
+    bottom: 60px;
+  }
+}
+/* ==========================================
+   TARJETAS INTERACTIVAS EN RESPONSIVE
+   ========================================== */
+@media (max-width: 768px) {
+  
+  /* Asegurar espacio relativo para el overlay */
+  .tarjeta-servicio {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    min-height: 110px; /* Altura compacta para mostrar solo el título */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1.2rem;
+  }
+
+  /* Ajuste visual del título */
+  .tarjeta-servicio h3 {
+    margin-bottom: 0;
+    font-size: 1.1rem;
+    pointer-events: none;
+  }
+
+  /* El <p> actúa como capa de superposición (overlay) oculto por defecto */
+  .tarjeta-servicio p {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--verde-laurel); /* Fondo verde institucional */
+    color: #ffffff;                        /* Texto blanco legible */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 0.9rem;
+    
+    /* Animación de entrada suave desde abajo */
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+  }
+
+  /* Al tocar o hacer HOVER/ACTIVE en la tarjeta, el <p> se superpone */
+  .tarjeta-servicio:hover p,
+  .tarjeta-servicio:active p,
+  .tarjeta-servicio.activa p {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
