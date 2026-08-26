@@ -911,8 +911,26 @@ footer {
   .indicador-deslizar {
     display: none; /* Se oculta en computadoras */
   }
-}
-.tarjeta-cierre {
-  background: linear-gradient(180deg, #ffffff 0%, #f4f6f5 100%);
-  border: 2px solid #1b3b2b !important;
+
+  .carrusel-equipo {
+    display: flex !important;
+    flex-wrap: wrap !important; /* Despliega las tarjetas en cuadrícula */
+    justify-content: center !important; /* Centra el contenido */
+    overflow-x: visible !important; /* Desactiva el carrusel en PC */
+    gap: 20px !important;
+    padding: 20px 0 !important;
+  }
+
+  .tarjeta-abogado {
+    flex: 0 0 280px !important; /* Ancho fijo para pantallas grandes */
+    max-width: 280px !important;
+    min-height: auto !important;
+  }
+
+  /* Hace que la foto grupal abarque arriba si se requiere */
+  .tarjeta-grupal {
+    flex: 0 0 100% !important;
+    max-width: 750px !important;
+    margin-bottom: 10px;
+  }
 }
