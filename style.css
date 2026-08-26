@@ -907,30 +907,58 @@ footer {
   }
 }
 
+/* --- VISTA ESCRITORIO (PC) --- */
+/* --- VISTA ESCRITORIO (PC) --- */
 @media (min-width: 768px) {
   .indicador-deslizar {
-    display: none; /* Se oculta en computadoras */
+    display: none !important;
   }
 
   .carrusel-equipo {
     display: flex !important;
-    flex-wrap: wrap !important; /* Despliega las tarjetas en cuadrícula */
-    justify-content: center !important; /* Centra el contenido */
-    overflow-x: visible !important; /* Desactiva el carrusel en PC */
-    gap: 20px !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    overflow-x: visible !important;
+    gap: 25px !important;
     padding: 20px 0 !important;
   }
 
-  .tarjeta-abogado {
-    flex: 0 0 280px !important; /* Ancho fijo para pantallas grandes */
+  /* La tarjeta grupal ocupa el 100% de la primera fila */
+  .tarjeta-grupal {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    max-width: 850px !important;
+    margin: 0 auto 20px auto !important;
+  }
+
+  .foto-contenedor-grupal {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 400px !important;
+  }
+
+  .foto-grupal {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+
+  /* Todas las tarjetas individuales pasan a la siguiente fila */
+  .tarjeta-abogado:not(.tarjeta-grupal) {
+    flex: 0 0 280px !important;
     max-width: 280px !important;
     min-height: auto !important;
   }
+}
+/* Forzar salto de fila en la tarjeta grupal */
+.fila-grupal {
+  width: 100% !important;
+  flex: 0 0 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+}
 
-  /* Hace que la foto grupal abarque arriba si se requiere */
-  .tarjeta-grupal {
-    flex: 0 0 100% !important;
-    max-width: 750px !important;
-    margin-bottom: 10px;
-  }
+.fila-grupal .tarjeta-grupal {
+  width: 100% !important;
+  max-width: 850px !important;
 }
