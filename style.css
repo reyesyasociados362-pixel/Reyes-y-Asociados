@@ -396,6 +396,7 @@ footer {
   padding: 2rem 5%;
   font-size: 0.9rem;
   border-top: 1px solid rgba(200, 157, 53, 0.3);
+  padding-bottom: 120px !important;
 }
 
 /* ==========================================
@@ -676,16 +677,17 @@ footer {
   .widget-asesoria-container {
     bottom: 15px;
     right: 15px;
-    left: 15px;
+    left: auto;
   }
 
   .btn-flotante-asesoria {
-    width: 100%;
-    justify-content: center;
+   padding: 8px 14px;
+    font-size: 0.8rem;
+  
   }
 
   .chat-modal {
-    width: 100%;
+    width: 90vw;
     bottom: 60px;
   }
 }
@@ -746,4 +748,171 @@ footer {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+
+/* --- CARRUSEL DESLIZABLE NUESTRO EQUIPO --- */
+
+
+.seccion-equipo {
+  padding: 50px 15px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.titulo-equipo {
+  font-size: 2rem;
+  color: #1b3b2b;
+  margin-bottom: 25px;
+  font-weight: bold;
+}
+
+/* Contenedor del Carrusel deslizable */
+.carrusel-equipo {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 10px 5px 25px 5px;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Ocultar barra de desplazamiento visual para un acabado más limpio */
+.carrusel-equipo::-webkit-scrollbar {
+  height: 6px;
+}
+.carrusel-equipo::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+/* Tarjeta individual */
+.tarjeta-abogado {
+  flex: 0 0 85%; /* En móvil ocupa el 85% de la pantalla para dejar ver la siguiente tarjeta */
+  max-width: 320px;
+  scroll-snap-align: center;
+  background: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+  padding: 25px 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  box-sizing: border-box;
+}
+
+/* Ajuste especial para la tarjeta grupal */
+.foto-contenedor-grupal {
+  width: 100%;
+  height: auto; /* Permite que la altura se adapte a la proporción completa de la foto */
+  max-height: 200px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f8f9fa; /* Fondo neutro por si quedan bordes pequeños */
+}
+
+.foto-grupal {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+}
+
+/* Fotos circulares para abogados individuales */
+.foto-contenedor {
+  width: 180px;
+  height: 200px;
+  margin: 0 auto 5px auto;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid #eaeaea;
+}
+
+.foto-abogado {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nombre-abogado {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 5px;
+}
+
+.cargo-abogado {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  color: #666666;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+.puesto-abogado{
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #444444;
+}
+.bio-abogado {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #444444;
+  text-align: justify;
+
+}
+
+/* Adaptación para pantallas de escritorio */
+@media (min-width: 768px) {
+  .carrusel-equipo {
+    justify-content: center;
+    overflow-x: visible;
+  }
+  .tarjeta-abogado {
+    flex: 0 0 300px;
+  }
+}
+/* --- FLECHA ANIMADA Y ANCHO DE TARJETAS EN MÓVIL --- */
+.indicador-deslizar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #1b3b2b;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.flecha-animada {
+  font-size: 1.1rem;
+  display: inline-block;
+  animation: deslizarFlecha 1.4s infinite;
+}
+
+@keyframes deslizarFlecha {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(7px); }
+}
+
+@media (max-width: 767px) {
+  .carrusel-equipo {
+    padding: 10px 10px 25px 10px !important;
+    gap: 15px !important;
+  }
+
+  .tarjeta-abogado {
+    flex: 0 0 92% !important; /* Estira el ancho a casi toda la pantalla */
+    max-width: none !important;
+    min-height: 450px !important; /* Estira el alto de las cajas */
+  }
+}
+
+@media (min-width: 768px) {
+  .indicador-deslizar {
+    display: none; /* Se oculta en computadoras */
+  }
+}
+.tarjeta-cierre {
+  background: linear-gradient(180deg, #ffffff 0%, #f4f6f5 100%);
+  border: 2px solid #1b3b2b !important;
 }
